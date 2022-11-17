@@ -16,8 +16,7 @@ docker build . -t final_project
 ```
 This Docker container is based on rocker/verse. To run rstudio server:
 ```
-docker run -e PASSWORD=somepassword --rm -p 8787:8787\
-	-v $(pwd):/home/rstudio/project rocker/verse
+docker run -e PASSWORD=somepassword --rm -p 8787:8787 -v $(pwd):/home/rstudio/project -it final_project
 ```
 Then, you can visit [http://localhost:8787](http://localhost:8787/) via a browser with username "rstudio and password "somepassword" to get the environment.
 
