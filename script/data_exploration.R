@@ -1,5 +1,4 @@
 library(devtools)
-install_version("gutenbergr", version = "0.2.1", repos = "http://cran.us.r-project.org")
 library(gutenbergr)
 library(tidyverse)
 library(readxl)
