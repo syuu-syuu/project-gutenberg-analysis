@@ -1,6 +1,9 @@
 ---
 title: "Final report"
-output: pdf_document
+output:
+  html_document:
+    df_print: paged
+  pdf_document: default
 date: "2022-10-28"
 ---
 ```{r setup, include=FALSE}

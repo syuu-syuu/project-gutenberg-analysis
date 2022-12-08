@@ -20,14 +20,11 @@ df.csv\
  results/MarkTwain.pdf\
  results/Shakespeare.pdf\
  results/Dickens.pdf:\
- .created-dirs script/data_exploration.R \
+ .created-dirs script/data_exploration.R
 	Rscript script/data_exploration.R
 
 #dimensino reduction
-results/PCA.pdf\
- results/tSNE.pdf:\
- .created-dirs script/dimension_reduction.R \
- df.csv\
+results/PCA.pdf results/tSNE.pdf: .created-dirs script/dimension_reduction.R df.csv
 	Rscript script/dimension_reduction.R
 
 #classification
@@ -36,8 +33,7 @@ results/PCA_variance.pdf\
  results/Influence.pdf\
  results/accuracy_svm.pdf\
  results/accuracy_conparison.pdf:\
- .created-dirs script/classification.R \
- df.csv\
+ .created-dirs script/classification.R df.csv
 	Rscript script/classification.R
 
 # Build the final report for the project
@@ -56,5 +52,6 @@ final.pdf:\
   results/accuracy_gbm.pdf\
   results/Influence.pdf\
   results/accuracy_svm.pdf\
-  results/accuracy_conparison.pdf\
+  results/accuracy_conparison.pdf
 	Rscript -e "rmarkdown::render(\"final.Rmd\", output_format=\"pdf_document\")"
+
